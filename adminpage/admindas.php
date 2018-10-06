@@ -24,7 +24,7 @@ if($_SESSION['sdata']){
       <div class="container">
       <div class="main-admin">
         <div class="box1">
-          <p>Insert<br>Enter Students Details</p>
+          <a href="insert.php"><p>Insert<br>Enter Students Details</p></a>
         </div>
         <div class="box2">
           <p>Update<br>Update Students Details</p>
