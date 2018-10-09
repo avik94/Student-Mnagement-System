@@ -27,7 +27,7 @@ if($_SESSION['sdata']){
           <a href="insert.php"><p>Insert<br>Enter Students Details</p></a>
         </div>
         <div class="box2">
-          <p>Update<br>Update Students Details</p>
+          <a href="update.php"><p>Update<br>Update Students Details</p></a>
         </div>
         <div class="box3">
           <p>Delete<br>Delete Students Details</p>
