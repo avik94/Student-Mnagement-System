@@ -186,3 +186,9 @@ p{
   font-family: roboto;
   padding-bottom: 15px;
 }
+.updateSubmit{
+    margin-top: 10px;
+    padding: 7px;
+    font-size: 16px;
+    border-radius: 4px;
+}
