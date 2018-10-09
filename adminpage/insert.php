@@ -14,7 +14,7 @@
     <h2 class="text-center headding">Welcome Admin </h2>
     <div class="main-text-container insertBox">
       <p class="insertformText">Please Enter Student Details Carefully*</p>
-      <form class="insertForm" action="insert.php" method="post">
+      <form class="insertForm" action="insert.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label>Student Name:</label>
           <input type="text" name="studentName" class="form-control student-name" required >
@@ -37,10 +37,10 @@
         </div>
         <div class="form-group">
           <label>Upload Student Photo:</label>
-          <input type="file" name="studentPhoto" class="student-photo" required >
+          <input type="file" name="studentPhoto" class="student-photo" required>
         </div>
         <div class="form-group">
-          <input type="submit" name="submit" class="insertSubmit" value="Submit" required >
+          <input type="submit" name="submit" class="insertSubmit" value="Submit">
         </div>
 
       </form>
@@ -48,3 +48,71 @@
     </div>
   </body>
 </html>
+
+<?php
+
+if (isset($_POST['submit'])){
+  include('../dbconnect.php');
+
+  $StudentName=$_POST['studentName'];
+  $StudentRoll=$_POST['studentRoll'];
+  $StudentClass=$_POST['studentClass'];
+  $StudentSec=$_POST['studentSec'];
+  $StudentPhone=$_POST['studentPhone'];
+
+  // file Upload-----
+  $studentImageName = $_FILES['studentPhoto']['name']; //file name
+  $studentImageSize = $_FILES['studentPhoto']['size']; //file size
+  $studentImageTempName = $_FILES['studentPhoto']['tmp_name']; //temp file name for server
+  move_uploaded_file($studentImageTempName,"../images/$studentImageName");
+
+  // checking file type
+  $fileType= pathinfo($studentImageName,PATHINFO_EXTENSION);
+  if($fileType == "jpg"){
+    $fileuploadOk= 1;
+  }else{
+    $fileuploadOk= 2;
+  }
+
+  // checking file size
+  if ($studentImageSize > 5000000) {
+    $fileuploadOk = 0;
+  }
+
+  if ($fileuploadOk == 1) {
+    $qry="insert into Student_Details(Name, Roll, Class, Sec, Image, Phone) values ('$StudentName','$StudentRoll','$StudentClass','$StudentSec','$studentImageName','$StudentPhone')";
+    $result = mysqli_query($conn,$qry);
+
+    if($result == True){
+      ?>
+      <script >
+      alert("Data Inserted Successfully");
+
+      </script>
+      <?php
+    }else{
+      ?>
+      <script>
+      alert("Data Not Inserted");
+      </script>
+      <?php
+    }
+
+  }elseif($fileuploadOk == 0){
+    ?>
+    <script>
+     alert("File Too Large");
+
+    </script>
+    <?php
+  }elseif ($fileuploadOk == 2) {
+    ?>
+    <script>
+     alert("Please upload photo in jpg format");
+    </script>
+    <?php
+  }
+  // end of file upload
+
+}
+ ?>
