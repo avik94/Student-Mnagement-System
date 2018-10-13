@@ -24,7 +24,7 @@
   /* background-position: left; */
   padding: 10px;
   border: 2px solid #2eabe6;
-  min-height: 500px;
+  min-height: 200px;
 }
 .headding{
   color: #aba5a5;
@@ -191,4 +191,20 @@ p{
     padding: 7px;
     font-size: 16px;
     border-radius: 4px;
+}
+/* updatePAge Table */
+.tableHead,.tableData,.tableNoData{
+  padding: 20px;
+  border: 1px solid;
+}
+.tableContainer{
+  margin: 10px 0 0 231px;
+}
+.tableNoData{
+  text-align: center;
+}
+.editButton{
+  padding: 5px;
+  font-size: 15px;
+  width: 76%;
 }
