@@ -54,43 +54,14 @@
             while ($data= mysqli_fetch_assoc($conn)) {
               ?>
               <tr>
-                <td class=tableData><?php echo $data['Name'];?></td>
-                <td class=tableData><?php echo $data['Roll']; ?></td>
-                <td class=tableData><?php echo $data['Class']; ?></td>
-                <td class=tableData><?php echo $data['Phone']; ?></td>
-                <td class=tableData><?php echo $data['Sec']; ?></td>
-                <td class=tableData><?php echo $data['Image']; ?></td>
-                <td class="tableData"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Edit</button></td>
+                <td class="tableData"><?php echo $data['Name'];?></td>
+                <td class="tableData"><?php echo $data['Roll']; ?></td>
+                <td class="tableData"><?php echo $data['Class']; ?></td>
+                <td class="tableData"><?php echo $data['Phone']; ?></td>
+                <td class="tableData"><?php echo $data['Sec']; ?></td>
+                <td class="tableData"><?php echo $data['Image']; ?></td>
+                <td class="tableData"><a href="updateForm.php?sid=<?php echo $data['Id'];?>">Edit</a></td>
               </tr>
-              <!-- Modal -->
-                <div id="myModal" class="modal fade" role="dialog">
-                  <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title text-center">Enter Student New Updated Details</h4>
-                      </div>
-                      <div class="modal-body">
-                        <!-- insert form for uppdating -->
-
-
-
-
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <?php
-                  if (isset($_POST['edit'])) {
-
-                  }
-
-                 ?>
               <?php
             }
           }
