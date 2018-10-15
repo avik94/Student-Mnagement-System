@@ -1,7 +1,9 @@
 <?php
 session_start();
-if ($_SESSION['sdata']){
-  header('Location:adminpage/admindas.php');
+if (isset($_SESSION['sdata'])) {
+  if ($_SESSION['sdata']){
+    header('Location:adminpage/admindas.php');
+  }
 }
  ?>
 
