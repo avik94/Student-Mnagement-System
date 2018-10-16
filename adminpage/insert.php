@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
+    <p><a href="admindas.php"><u>Go Back to the Admin page.......</u></a></p>
     <h2 class="text-center headding">Welcome Admin </h2>
     <div class="main-text-container insertBox">
       <p class="insertformText">Please Enter Student Details Carefully*</p>

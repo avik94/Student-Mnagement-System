@@ -1,13 +1,13 @@
 <?php
 include('../dbconnect.php' );
-$sidData=$_GET['sid'];
-if (isset($sidData)) {
-  $alldataQry= "select * from Student_Details where Id=$sidData";
-  $run=mysqli_query($conn,$alldataQry);
-  $data=mysqli_fetch_assoc($run);
-
+if (isset($_GET['sid'])) {
+  $sidData=$_GET['sid'];
+  if (isset($sidData)) {
+    $alldataQry= "select * from Student_Details where Id=$sidData";
+    $run=mysqli_query($conn,$alldataQry);
+    $data=mysqli_fetch_assoc($run);
+  }
 }
-
 ?>
 <!DOCTYPE html>
  <html lang="en" dir="ltr">
@@ -22,37 +22,40 @@ if (isset($sidData)) {
      <link rel="stylesheet" href="../css/style.css">
    </head>
    <body>
+     <p><a href="admindas.php"><u>Go Back to the Admin page.......</u></a></p>
      <h2 class="text-center headding">Update The Details</h2>
      <div class="main-text-container insertBox">
        <p class="insertformText">Please Enter New Student Details Carefully*</p>
        <form class="insertForm" action="updateForm.php" method="post" enctype="multipart/form-data">
          <div class="form-group">
            <label>Student Name:</label>
-           <input type="text" name="studentName" value="<?php echo $data['Name']?>" class="form-control student-name" required >
+           <input type="text" name="studentName" class="form-control student-name" required >
          </div>
          <div class="form-group">
            <label>Student Roll:</label>
-           <input type="number" name="studentRoll" value="<?php echo $data['Roll']?>" class="form-control student-roll" required >
+           <input type="number" name="studentRoll" class="form-control student-roll" required >
          </div>
          <div class="form-group">
            <label>Student Class:</label>
-           <input type="text" name="studentClass" value="<?php echo $data['Class']?>" class="form-control student-class" required >
+           <input type="text" name="studentClass" class="form-control student-class" required >
          </div>
          <div class="form-group">
            <label>Student Section:</label>
-           <input type="text" name="studentSec" value="<?php echo $data['Sec']?>" class="form-control student-sec" required >
+           <input type="text" name="studentSec" class="form-control student-sec" required >
          </div>
          <div class="form-group">
            <label>Student Phone No:</label>
-           <input type="text" name="studentPhone" value="<?php echo $data['Phone']?>" class="form-control student-phone" required >
+           <input type="text" name="studentPhone" class="form-control student-phone" required >
          </div>
          <div class="form-group">
            <label>Upload Student Photo:</label>
            <input type="file" name="studentPhoto" class="student-photo" required >
          </div>
+         <!-- must notice below line -->
          <input type="hidden" name="sid" value="<?php echo $data['Id'] ?>">
          <div class="form-group">
            <input type="submit" name="submit" class="insertSubmit" value="Submit">
+           <button type="button" name="button" class="updateCancel"><p class="cancel"><a href="update.php">Cancel</a></p></button>
          </div>
        </form>
 
@@ -98,7 +101,7 @@ if (isset($sidData)) {
        ?>
        <script >
        alert("Data Updated Successfully");
-       window.open('updateForm.php?sid=<?php echo $StudentId; ?>','_self');
+       // window.open('updateForm.php?sid=<?php echo $StudentId; ?>','_self');
 
        </script>
        <?php
