@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
+    <p><a href="admindas.php"><u>Go Back to the Admin page.......</u></a></p>
     <h2 class="text-center headding">Welcome Update Your Student Details</h2>
     <div class="main-text-container insertBox">
       <form class="updateForm" action="update.php" method="post">
@@ -48,7 +49,7 @@
             $row =mysqli_num_rows($conn);
             if($row<1){
               ?>
-              <td class=tableNoData colspan="6"><?php echo "No Data Found"?></td>
+              <td class=tableNoData colspan="7"><?php echo "No Data Found"?></td>
               <?php
             }
             while ($data= mysqli_fetch_assoc($conn)) {

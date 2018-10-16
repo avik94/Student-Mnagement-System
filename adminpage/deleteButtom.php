@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (isset($_SESSION['Sid'])) {
   $id= $_SESSION['Sid'];
 }else {
@@ -14,7 +13,7 @@ if (isset($_POST['deleteData'])) {
   ?>
   <script>
   alert("Data Deleted Successfuly");
-  window.open('delete.php','_self');  
+  window.open('delete.php','_self');
   </script>
   <?php
 
