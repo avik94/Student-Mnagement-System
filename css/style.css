@@ -168,7 +168,7 @@ p{
 .student-name,.student-roll,.student-phone,.student-class,.student-sec{
   width: 70%;
 }
-.insertBox{
+.insertBox,.deleteBox{
   width: 50%;
   margin:auto;
 }
@@ -186,13 +186,16 @@ p{
   font-family: roboto;
   padding-bottom: 15px;
 }
-.updateSubmit{
+.updateSubmit,.deleteSubmit{
     margin-top: 10px;
     padding: 7px;
     font-size: 16px;
     border-radius: 4px;
     color: #f2f2f2;
     background-color:green;
+}
+.deleteSubmit{
+  width: 15%;
 }
 /* updatePAge Table */
 .tableHead,.tableData,.tableNoData{
