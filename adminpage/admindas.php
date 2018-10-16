@@ -30,7 +30,7 @@ if($_SESSION['sdata']){
           <a href="update.php"><p>Update<br>Update Students Details</p></a>
         </div>
         <div class="box3">
-          <p>Delete<br>Delete Students Details</p>
+          <a href="delete.php"><p>Delete<br>Delete Students Details</p></a>
         </div>
       </div>
       <div class="changePasswordButton">
