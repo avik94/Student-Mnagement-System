@@ -25,6 +25,18 @@
       </form>
     </div>
     <div class=tableContainer>
+      <?php
+      if (isset($_POST['checkForUpdate'])){
+        include('../dbconnect.php');
+        // gettingdatafromform
+        $studentName = $_POST['updateStudentName'];
+        $studentClass = $_POST['updateStudentClass'];
+        // query
+        $qry = "select * from Student_Details where Name like'%$studentName%' and Class='$studentClass'";
+        $conn=mysqli_query($conn,$qry);
+        // $data = mysqli_fetch_assoc($conn);       Newdebug
+        $row =mysqli_num_rows($conn);
+      ?>
       <tbody>
         <table>
           <tr>
@@ -37,21 +49,11 @@
             <th class=tableHead>Action</th>
           </tr>
           <?php
-          if (isset($_POST['checkForUpdate'])){
-            include('../dbconnect.php');
-            // gettingdatafromform
-            $studentName = $_POST['updateStudentName'];
-            $studentClass = $_POST['updateStudentClass'];
-            // query
-            $qry = "select * from Student_Details where Name like'%$studentName%' and Class='$studentClass'";
-            $conn=mysqli_query($conn,$qry);
-            // $data = mysqli_fetch_assoc($conn);       Newdebug
-            $row =mysqli_num_rows($conn);
-            if($row<1){
-              ?>
-              <td class=tableNoData colspan="7"><?php echo "No Data Found"?></td>
-              <?php
-            }
+          if($row<1){
+            ?>
+            <td class=tableNoData colspan="7"><?php echo "No Data Found"?></td>
+            <?php
+          }
             while ($data= mysqli_fetch_assoc($conn)) {
               ?>
               <tr>
@@ -60,7 +62,7 @@
                 <td class="tableData"><?php echo $data['Class']; ?></td>
                 <td class="tableData"><?php echo $data['Phone']; ?></td>
                 <td class="tableData"><?php echo $data['Sec']; ?></td>
-                <td class="tableData"><?php echo $data['Image']; ?></td>
+                <td class="tableData"><img src="../images/<?php echo $data['Image']; ?>" height="100px;" width="100px;"></td>
                 <td class="tableData"><a href="updateForm.php?sid=<?php echo $data['Id'];?>">Edit</a></td>
               </tr>
               <?php
