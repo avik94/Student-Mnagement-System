@@ -69,7 +69,7 @@
             <td class=tableData><?php echo $data['Class'] ?></td>
             <td class=tableData><?php echo $data['Phone'] ?></td>
             <td class=tableData><?php echo $data['Sec'] ?></td>
-            <td class=tableData><?php echo $data['Image'] ?></td>
+            <td class=tableData><img src="../images/<?php echo $data['Image']; ?>" height="100px;" width="100px;"></td>
             <form action="deleteButtom.php" method="post">
               <td class=tableData><input type="submit" name="deleteData" class="form-control deleteData" value="Delete"></td>
               <?php
