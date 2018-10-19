@@ -37,7 +37,7 @@ if($_SESSION['sdata']){
         <a href="changepassword.php" type="button" >Change Password</a>
       </div>
       <div class="logoutButton">
-        <a href="../logout.php" type="button">Log Out</a>
+        <a href="../logout.php" type="button">Log Out</a>        
       </div>
     </div>
     </div>
