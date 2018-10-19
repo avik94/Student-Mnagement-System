@@ -110,7 +110,7 @@
   border: 2px solid grey;
   margin-left: 300px;
   margin-right: 300px;
-  margin-top: 100px;
+  margin-top: 60px;
   border-radius: 10px;
   box-shadow:15px 17px 20px #3e3d3d;
 }
@@ -271,4 +271,7 @@ p{
 .deleteData{
   background-color: #ab2525;
   color: #f2f2f2;
+}
+.indexLink{
+  margin-top: 10px;
 }
