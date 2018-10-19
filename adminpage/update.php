@@ -49,16 +49,6 @@
             <th class=tableHead>Action</th>
           </tr>
           <?php
-          if (isset($_POST['checkForUpdate'])){
-            include('../dbconnect.php');
-            // gettingdatafromform
-            $studentName = $_POST['updateStudentName'];
-            $studentClass = $_POST['updateStudentClass'];
-            // query
-            $qry = "select * from Student_Details where Name like'%$studentName%' and Class='$studentClass'";
-            $conn=mysqli_query($conn,$qry);
-            // $data = mysqli_fetch_assoc($conn);       Newdebug
-            $row =mysqli_num_rows($conn);
             if($row<1){
               ?>
               <td class=tableNoData colspan="7"><?php echo "No Data Found"?></td>
