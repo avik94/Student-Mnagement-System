@@ -14,7 +14,7 @@
   text-decoration: none;
 }
 .main{
-  background-image: url(../images/background.png);
+  background-image: url(../images/background.jpg);
 }
 .container{
   background-image: url(../images/background2.jpg);
@@ -47,21 +47,29 @@
   border:2px solid #0000007a;
   min-height: 250px;
   box-shadow:15px 17px 20px #3e3d3d;
+  background-color: #c7c4c433;
 }
 .rollnumber{
   padding: 8px;
-  width: 246px;
+  width: 200px;
+  margin-left: 28px;
 }
 .class{
   width:100px;
   padding:8px;
-  border-radius: 20px;
+  border-radius: 5px;
   border:1px solid black;
   background-color:#1a6498;
   color: #f2f2f2;
+  margin-left: 28px;
+
+}
+.adminheadding{
+color:#1f1b1b;
 }
 .button{
-  width: 355px;
+  width: 50%;
+  margin-top: 20px;
   padding:10px;
   background-color: #1f7722;
   color: #f2f2f2;
@@ -71,7 +79,7 @@
 .adminButton{
   width: 270px;
   padding:14px;
-  background-color: #1f7722;
+  background-color: #1f4a77;
   color: #f2f2f2;
   border: 1px solid;
   border-radius:10px;
@@ -83,6 +91,7 @@
 }
 .label-headding{
   color: #f2f2f2;
+  margin-left: 28px;
 }
 .Button{
   padding: 7px;
@@ -104,7 +113,7 @@
   padding: 5px;
 }
 .loginBorder{
-  background-color: #01695f54;
+  background-color: #afc3ca;
   min-height: 350px;
   padding: 15px;
   border: 2px solid grey;
@@ -274,4 +283,27 @@ p{
 }
 .indexLink{
   margin-top: 10px;
+}
+.resultTable{
+  background-color: #f3f3f3;
+  padding: 20px 164px;
+}
+.studentImageResult{
+  padding-bottom: 20px;
+}
+.resultHeadding{
+  color:#000;
+}
+.Searchheadding{
+  font-size: 14px;
+  padding-bottom: 20px;
+  text-decoration: underline;
+}
+.resultRow{
+  margin-top: 30px;
+}
+.fontStyleResult{
+  font-family: Times;
+  font-weight: bold;
+  font-size: 16px;
 }

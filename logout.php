@@ -4,5 +4,5 @@ session_destroy();
 ?>
 <script>
   alert("Perfectly Logout");
-  window.open('login.php','_self');
+  window.open('index.php','_self');
 </script>

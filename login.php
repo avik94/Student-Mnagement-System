@@ -20,9 +20,8 @@ if (isset($_SESSION['sdata'])) {
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <p class="text-center indexLink"><a href="index.php"><u>Go To Home Page ...........</u></a></p>
     <div class="loginBorder">
-      <h2 class="text-center headding">Admin Login</h2>
+      <h2 class="text-center headding adminheadding">Admin Login</h2>
       <form class="loginForm" action="login.php" method="post">
         <label>Username</label>
         <input type="text" name="username" required class="inputform"><br>
