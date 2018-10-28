@@ -1,12 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['sdata'])) {
-  if ($_SESSION['sdata']){
-    header('Location:adminpage/admindas.php');
-  }
-}
- ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -21,41 +12,34 @@ if (isset($_SESSION['sdata'])) {
   </head>
   <body>
     <div class="loginBorder">
-      <h2 class="text-center headding adminheadding">Admin Login</h2>
-      <form class="loginForm" action="login.php" method="post">
+      <h2 class="text-center headding adminheadding">Admin Registration</h2>
+      <form class="loginForm" action="registration.php" method="post">
         <label>Username</label>
         <input type="text" name="username" required class="inputform"><br>
         <label>Password</label>
         <input type="password" name="password" required class="inputform"><br>
-        <input type="submit" name="loginbutton" value="Login" class="adminButton">
+        <input type="submit" name="Createbutton" value="Create" class="adminButton">
       </form>
-      <p class="registration"><a href="registration.php"><u>New Registration.....!</u></a></p>
     </div>
   </body>
 </html>
 
 <?php
-include('dbconnect.php');
-
-if (isset($_POST['loginbutton'])){
-  $uname=$_POST['username'];
-  $pass=$_POST['password'];
-  $qry="select * from Admin where Username='$uname' and Password='$pass'";
-  $con=mysqli_query($conn,$qry);
-  $row =mysqli_num_rows($con);
-  echo $row;
-  if ($row<1){
+if (isset($_POST['Createbutton'])) {
+  include('dbconnect.php');
+  $uname = $_POST['username'];
+  $pass = $_POST['password'];
+  $qry = "insert into Admin (Username,Password) value ('$uname','$pass')";
+  $run = mysqli_query($conn,$qry);
+  if ($run==True){
     ?>
     <script>
-    alert("Please enter proper username or password");
-
+      alert("New User Created Successfully");
+      window.open('login.php','_self');
     </script>
     <?php
-  }else{
-    session_start();
-    $_SESSION['sdata']=$row;
-    header('location:adminpage/admindas.php');
   }
 }
+
 
  ?>
